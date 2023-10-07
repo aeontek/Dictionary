@@ -1,6 +1,6 @@
 {
     "name": "@aeontek/dictionary",
-    "version": "{{version}}",
+    "version": "1.0.8",
     "description": "An simple class for managing String-Indexed object arrays.",
     "main": "dist/Dictionary.js",
     "files": [
