@@ -1,6 +1,6 @@
 {
     "name": "@aeontek/dictionary",
-    "version": "1.0.8",
+    "version": "1.0.12",
     "description": "An simple class for managing String-Indexed object arrays.",
     "main": "dist/Dictionary.js",
     "files": [
@@ -20,6 +20,7 @@
         "@babel/core": "^7.22.20",
         "@babel/preset-env": "^7.22.20",
         "@babel/preset-typescript": "^7.22.15",
+        "@faker-js/faker": "^8.2.0",
         "@types/jest": "^29.5.5",
         "@types/node": "^20.6.2",
         "babel-jest": "^29.7.0",

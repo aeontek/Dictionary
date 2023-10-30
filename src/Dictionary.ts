@@ -10,9 +10,7 @@ export default class Dictionary<T> {
      * @returns {any} The object identified by the unique identifier
      */
     getById = (id: string): T | null => {
-        if (this[id]) {
-            return this[id] as T;
-        } else return null;
+        return this[id] === undefined ? null : (this[id] as T);
     };
 
     /**
