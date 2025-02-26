@@ -74,6 +74,30 @@ export default class Dictionary<T> {
     };
 
     /**
+     * Order By Key or Value
+     * This is different than the sort function in that it returns a new Dictionary<T> rather than sorting the existing one
+     * @param {Function} action The action to be performed on each item
+     * @param {boolean} reverse Whether to reverse the order of the sort
+     * @returns {Dictionary<T>} A new Dictionary<T> sorted by the specified action
+     */
+    sort = (action: Function = null, reverse: boolean = false) => {
+        let keys = this.getKeys();
+        if (action) {
+            keys.sort((a, b) => {
+                return action(this.getById(a), this.getById(b));
+            });
+        } else {
+            keys.sort();
+        }
+        if (reverse) keys.reverse();
+        let ret = new Dictionary<T>();
+        keys.map((key) => {
+            ret.add(key, this.getById(key));
+        });
+        return ret;
+    };
+
+    /**
      * Created a Dictionary<T> from a JavaScript object
      * @param {Object} obj
      * @returns {Dictionary<T>}

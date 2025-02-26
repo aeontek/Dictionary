@@ -13,6 +13,7 @@ Class for handling string-indexed objects. Similar to Dictionaries or Advanced L
         * [.forEach(callback)](#Dictionary+forEach)
         * [.map(callback)](#Dictionary+map) ⇒ <code>Array</code>
         * [.getKeys()](#Dictionary+getKeys)
+        * [.sort(action, reverse)](#Dictionary+sort) ⇒ <code>Dictionary.&lt;T&gt;</code>
     * _static_
         * [.fromObject(obj)](#Dictionary.fromObject) ⇒ <code>Dictionary.&lt;T&gt;</code>
 
@@ -84,6 +85,20 @@ Iterates through the Ditcionary and performs an action on each item, returning a
 Lists all the keys used in the Dictionary
 
 **Kind**: instance method of [<code>Dictionary</code>](#Dictionary)  
+<a name="Dictionary+sort"></a>
+
+### dictionary.sort(action, reverse) ⇒ <code>Dictionary.&lt;T&gt;</code>
+Order By Key or Value
+This is different than the sort function in that it returns a new Dictionary<T> rather than sorting the existing one
+
+**Kind**: instance method of [<code>Dictionary</code>](#Dictionary)  
+**Returns**: <code>Dictionary.&lt;T&gt;</code> - A new Dictionary<T> sorted by the specified action  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| action | <code>function</code> | The action to be performed on each item |
+| reverse | <code>boolean</code> | Whether to reverse the order of the sort |
+
 <a name="Dictionary.fromObject"></a>
 
 ### Dictionary.fromObject(obj) ⇒ <code>Dictionary.&lt;T&gt;</code>

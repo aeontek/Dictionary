@@ -93,3 +93,27 @@ test("When item is removed, returns item", () => {
     dic.add(key, val);
     assert.deepEqual(dic.remove(key), val);
 });
+
+test("Can sort items by key", () => {
+    let obj = {
+        b: { a: 1, b: 2, c: 3 },
+        d: { a: 1, b: 2, c: 3 },
+        c: { a: 1, b: 2, c: 3 },
+        a: { a: 1, b: 2, c: 3 },
+    };
+    let dic = Dictionary.fromObject(obj);
+    let sorted = dic.sort();
+    assert.deepEqual(sorted.getKeys(), ["a", "b", "c", "d"]);
+});
+
+test("Can sort items by value", () => {
+    let obj = {
+        b: { a: 2, b: 2, c: 3 },
+        d: { a: 4, b: 2, c: 3 },
+        c: { a: 3, b: 2, c: 3 },
+        a: { a: 1, b: 2, c: 3 },
+    };
+    let dic = Dictionary.fromObject(obj);
+    let sorted = dic.sort((a, b) => a.a - b.a);
+    assert.deepEqual(sorted.getKeys(), ["a", "b", "c", "d"]);
+});
